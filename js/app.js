@@ -20,7 +20,7 @@ var Location = function(title, lng, lat, venueId, cat) {
 
 			}).done(function(){
 
-				self.content = '<h2>' + self.title + '</h2>' + '<h3>5 Most Recent Comments</h3>' + '<ol class="tips">' + topTips.join('') + '</ol>';
+				self.content = '<h1 style="text-align:center">' + self.title + '</h1>' + '<h3>5 Most Recent Comments</h3>' + '<ol class="tips">' + topTips.join('') + '</ol>';
 			}).fail(function(jqXHR, textStatus, errorThrown) {
 				self.content = '<h2>' + self.title + '</h2>' + '<h3>5 Most Recent Comments</h3>' + '<h4>Oops. There was a problem retrieving this location\'s comments.</h4>';
 				console.log('getJSON request failed! ' + textStatus);
