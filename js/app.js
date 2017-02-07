@@ -10,7 +10,7 @@ var Location = function(title, lng, lat, venueId, cat) {
 // getConetent function retrieves 5 most recent tips from foursquare for the marker location.
 	this.getContent = function() {
 		var topTips = [];
-		var venueUrl = 'https://api.foursquare.com/v2/venues/' + self.venueId + '/tips?sort=recent&limit=5&v=20150609&client_id=4EPS21I4V4MVCYXWDT4QNZZG1JETWZ2LIJMYQ34FNBWZ1RMV&client_secret=U3P1XLU204VMYO4BHGIWPDOY130Z1AFTT1OQTI2TY0HW0T43';
+		var venueUrl = 'https://api.foursquare.com/v2/venues/' + self.venueId + '/tips?sort=recent&limit=5&v=20150609&client_id=W252SAVOZDZU3QTQ1CMDZOR0GCWRHCBKQHMDW1ZRIN2BAVRR&client_secret=EJMWHPN3ZHXQWENMP2UHSFYB1WI0F2RDEQMN304GMKGBIEUT';
 
 		$.getJSON(venueUrl,
 			function(data) {
@@ -31,14 +31,14 @@ var Location = function(title, lng, lat, venueId, cat) {
 
 		// Assigns a marker icon color based on the category of the location.
 		switch (this.cat) {
-			case "Education":
-			this.icon = 'http://www.googlemapsmarkers.com/v1/009900/';
+			case "Coffee":
+			this.icon = 'http://www.googlemapsmarkers.com/v1/C/009900/';
 			break;
 			case "Food":
-			this.icon = 'http://www.googlemapsmarkers.com/v1/0099FF/';
+			this.icon = 'http://www.googlemapsmarkers.com/v1/F/0099FF/';
 			break;
 			default:
-			this.icon = 'http://www.googlemapsmarkers.com/v1/990000/';
+			this.icon = 'http://www.googlemapsmarkers.com/v1/D/990000/';
 		}
 		this.marker = new google.maps.Marker({
 			position: new google.maps.LatLng(self.lng, self.lat),
@@ -65,14 +65,14 @@ var Location = function(title, lng, lat, venueId, cat) {
 	var locationsModel = {
 
 		locations:[
-		new Location('RNSIT', 12.9021954,77.5163933 ,'4ad4c00af964a5203ded20e3', 'Education'),
-		new Location('Swargrani School', 12.9123717,77.5250546, '4adc8051f964a520b92c21e3', 'Education'),
-		new Location('Best Club', 12.9126831,77.5204483, '4bb8979c3db7b713c965219a', 'Entertainment'),
-		new Location('Cool Berryz', 12.9160618,77.5202904, '4b6b5120f964a52078002ce3', 'Food'),
-		new Location('Cool Joint', 12.9288143,77.5837105, '4d615493e4fe5481a8618a9e', 'Food'),
-		new Location('SJBIT', 12.8998893,77.4935995, '4c84e24574d7b60ca66196d8', 'Education'),
-		new Location('BGS Hospital', 12.9070765,77.4969444, '4afee1fdf964a520333122e3', 'Hospital'),
-		new Location('Pizza Hut', 12.9071631,77.4641135, '4aecb1b2f964a52056ca21e3', 'Food')
+		new Location('By 2 coffee', 12.9648003,77.5389259 ,'51d8034a498e44075a4a92fc', 'Coffee'),
+		new Location('Captain\'s Food Court', 12.9190615,77.5183429, '52b4215211d2e0e5ef99e09b', 'Food'),
+		new Location('Cafe Coffee Day', 12.9190613,77.5117768, '4c61410f924b76b0ae8afab9', 'Coffee'),
+		new Location('Gopalan Arcade', 12.93597,77.5155649, '4beade509fa3ef3ba52f80c9', 'Shopping'),
+		new Location('Kaapi Katte', 12.9164329,77.5184768, '4f140fece4b0253d4f512942', 'Food'),
+		new Location('Chung Wah', 12.9250658,77.5486708, '4bd2c60cb221c9b62145d8d0', 'Food'),
+		new Location('Royal Andhra Spice', 12.9057565,77.5188221, '4de4d44ec65b7a3e21522847', 'Food'),
+		new Location('Pizza Hut',12.9057559,77.5035012, '4e7a0e46aeb79f7dabc48535', 'Food')
 		],
 		query: ko.observable(''),
 	};
